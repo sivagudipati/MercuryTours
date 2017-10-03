@@ -1,6 +1,7 @@
 package org.MercuryTours.pages;
 
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -47,7 +48,9 @@ public class PageInfo {
 		System.out.println("no other browser selected, Firefox initiated");
 	}
 
-	wait = new WebDriverWait(driver, Integer.parseInt(waitingtime));
+	//wait = new WebDriverWait(driver, Integer.parseInt(waitingtime));
+    driver.manage().timeouts().implicitlyWait(Integer.parseInt(waitingtime), TimeUnit.SECONDS);
+
 	driver.get(URL);
 		}
 	}
